@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIFAL 2026 - Galeria de Fotos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ========================================================================= */
+        /* AQUI COMEÇA O CSS EXCLUSIVO DA GALERIA (Pode mover para o css/galeria.css) */
+        /* ========================================================================= */
+        
+        /* Card da foto seguindo o padrão das equipes */
+        .galeria-card { 
+            text-align: center; 
+            border-top: 6px solid var(--cor-turma, #0d6b24); /* Borda superior com a cor da turma */
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito de leve zoom ao passar o mouse no card da foto */
+        .galeria-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Controle das imagens para ficarem todas uniformes no grid */
+        .galeria-foto {
+            width: 100%;
+            height: 220px;      /* Altura fixa para organizar as fotos em linhas perfeitas */
+            object-fit: cover;  /* Corta inteligentemente a imagem para preencher o espaço sem distorcer */
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .galeria-card h3 { 
+            font-size: 22px; 
+            color: var(--text-dark, #333); 
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Mantendo o padrão exato de cores de cada turma */
+        .t-921 { --cor-turma: #e53e3e; } /* Vermelho */
+        .t-922 { --cor-turma: #63b3ed; } /* Azul claro */
+        .t-923 { --cor-turma: #2b6cb0; } /* Azul escuro */
+        .t-911 { --cor-turma: #805ad5; } /* Roxo */
+        .t-912 { --cor-turma: #48bb78; } /* Verde claro */
+        .t-913 { --cor-turma: #a0aec0; } /* Branco/Cinza */
+        .t-411 { --cor-turma: #1f441e; } /* Verde escuro */
+        .t-412 { --cor-turma: #741b47; } /* Vinho */
+        .t-413 { --cor-turma: #ecc94b; } /* Amarelo */
+        .t-521 { --cor-turma: #1a202c; } /* Preto */
+        .t-422 { --cor-turma: #f687b3; } /* Rosa */
+        .t-423 { --cor-turma: #718096; } /* Cinza */
+
+        /* ========================================================================= */
+        /* FIM DO CSS EXCLUSIVO DA GALERIA                                           */
+        /* ========================================================================= */
+    </style>
+
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo"><h2><a href="index.html">JIFAL 2026</a></h2></div>
+        <div class="menu-hamburguer" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <nav class="menu-navegacao" id="meuMenu">
+            <div class="fechar-menu" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="modalidades.html">Modalidades Esportivas</a></li>
+                <li><a href="equipes.html">Equipes Participantes</a></li>
+                <li><a href="galeria.html">Galeria de Fotos</a></li>
+                <li><a href="historico.html">Histórico</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-container">
+        <section class="banner" style="padding: 30px 20px;">
+            <h1>Galeria de Fotos</h1>
+            <p>Confira os registros oficiais e os melhores momentos de cada turma no JIFAL 2026.</p>
+        </section>
+
+        <div class="flex-row">
+            
+            <div class="flex-coluna galeria-card t-411">
+                <img src="imagens/411F.jpeg" class="galeria-foto" >
+                <h3>Turma 411</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-412">
+                <img src="imagens/412F.jpeg" class="galeria-foto" >
+                <h3>Turma 412</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-413">
+                <img src="imagens/413F.jpeg" class="galeria-foto" >
+                <h3>Turma 413</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-422">
+                <img src="imagens/422F.jpeg" class="galeria-foto" >
+                <h3>Turma 422</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-423">
+                <img src="imagens/423F.jpeg" class="galeria-foto" >
+                <h3>Turma 423</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-521">
+                <img src="imagens/521F.jpeg" class="galeria-foto" >
+                <h3>Turma 521</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-911">
+                <img src="imagens/911F.jpeg" class="galeria-foto" >
+                <h3>Turma 911</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-912">
+                <img src="imagens/912F.jpeg" class="galeria-foto" >
+                <h3>Turma 912</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-913">
+                <img src="imagens/913F.jpeg" class="galeria-foto" >
+                <h3>Turma 913</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-921">
+                <img src="imagens/921F.jpeg" class="galeria-foto" >
+                <h3>Turma 921</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-922">
+                <img src="imagens/922F.jpeg" class="galeria-foto" >
+                <h3>Turma 922</h3>
+            </div>
+            
+            <div class="flex-coluna galeria-card t-923">
+                <img src="imagens/923F.jpeg" class="galeria-foto" >
+                <h3>Turma 923</h3>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="f-item f-instituicao">
+            <img src="imagens/ifal_logo.png" alt="Logo IFAL" class="f-logo">
+            <p>Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</p>
+        </div>
+        <div class="f-item f-coluna-nomes">
+            <p class="titulo-desenvolvedores">Desenvolvido por:</p>
+            <b>João Vitor</b> <b>Davi Pietro</b> <b>Weverton Vinícius</b> <b>Bruno Rian</b>
+        </div>
+        <div class="f-item f-social-copyright">
+            <div class="f-icons">
+                <a href="https://www.instagram.com/923.ifal_?igsh=dTd6NGY3cHhmYnhv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>Copyright &copy; 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById("meuMenu").classList.toggle("ativo"); 
+        }
+    </script>
+</body>
+</html>

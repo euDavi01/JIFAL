@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIFAL 2026 - Modalidades Esportivas</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .mod-icon {
+            font-size: 42px;
+            color: var(--green-main, #0d6b24);
+            margin-bottom: 12px;
+        }
+        .mod-cat {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4a5568;
+            background: #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .flex-coluna h2 {
+            color: var(--green-dark, #064013);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .flex-coluna p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #444;
+        }
+        .local-info {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #718096;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <h2><a href="index.html">JIFAL 2026</a></h2>
+        </div>
+        
+        <div class="menu-hamburguer" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="menu-navegacao" id="meuMenu">
+            <div class="fechar-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="modalidades.html">Modalidades Esportivas</a></li>
+                <li><a href="equipes.html">Equipes Participantes</a></li>
+                <li><a href="galeria.html">Galeria de Fotos</a></li>
+                <li><a href="historico.html">Histórico</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-container">
+        <section class="banner" style="padding: 35px 20px;">
+            <h1>Modalidades Esportivas</h1>
+            <p>Conheça as competições oficiais e os respetivos locais de disputa deste ano.</p>
+        </section>
+
+        <div class="flex-row">
+            <div class="flex-coluna">
+                <i class="fa-solid fa-futbol mod-icon"></i>
+                <h2>Futsal</h2>
+                <p>O esporte tradicional das quadras do IFAL. Agilidade, tática e muita emoção a cada gol marcado.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: Quadra</span>
+                <span class="mod-cat">Masculino e Feminino</span>
+            </div>
+            
+            <div class="flex-coluna">
+                <i class="fa-solid fa-volleyball mod-icon"></i>
+                <h2>Voleibol</h2>
+                <p>Bloqueios, saques precisos e levantamentos estratégicos movimentam a rede na disputa pelo topo do pódio.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: Quadra</span>
+                <span class="mod-cat">Masculino, Feminino e Misto</span>
+            </div>
+
+            <div class="flex-coluna">
+                <i class="fa-solid fa-basketball mod-icon"></i>
+                <h2>Basquetebol</h2>
+                <p>Velocidade nas transições e arremessos precisos marcam os confrontos mais movimentados das chaves.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: Quadra</span>
+                <span class="mod-cat">Masculino e Feminino</span>
+            </div>
+
+            <div class="flex-coluna">
+                <i class="fa-solid fa-hand-rock mod-icon"></i>
+                <h2>Handebol</h2>
+                <p>Força física, passes rápidos e arremessos espetaculares compõem as partidas eletrizantes do torneio.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: Quadra</span>
+                <span class="mod-cat">Masculino e Feminino</span>
+            </div>
+
+            <div class="flex-coluna">
+                <i class="fa-solid fa-table-tennis-paddle-ball mod-icon"></i>
+                <h2>Tênis de Mesa</h2>
+                <p>Concentração e reflexos extremamente rápidos são os pilares dessa acirrada competição.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: No Pátio</span>
+                <span class="mod-cat">Masc., Fem. e Dupla Mista</span>
+            </div>
+
+            <div class="flex-coluna">
+                <i class="fa-solid fa-chess mod-icon"></i>
+                <h2>Xadrez</h2>
+                <p>O esporte da mente. Foco absoluto, raciocínio lógico e muita estratégia em partidas dinâmicas.</p>
+                <span class="local-info"><i class="fa-solid fa-location-dot"></i> Local: Em frente ao Auditório</span>
+                <span class="mod-cat">individual</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="f-item f-instituicao">
+            <img src="imagens/ifal_logo.png" alt="Logo IFAL" class="f-logo">
+            <p>Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</p>
+        </div>
+        
+        <div class="f-item f-coluna-nomes">
+            <p class="titulo-desenvolvedores">Desenvolvido por:</p>
+            <b>João Vitor</b>
+            <b>Davi Pietro</b>
+            <b>Weverton Vinícius</b>
+            <b>Bruno Rian</b>
+        </div>
+        
+        <div class="f-item f-social-copyright">
+            <div class="f-icons">
+                <a href="https://instagram.com/923.ifal" target="_blank" title="Instagram da Turma">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <p>Copyright &copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("meuMenu");
+            menu.classList.toggle("ativo");
+        }
+    </script>
+</body>
+</html>

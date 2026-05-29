@@ -1,0 +1,279 @@
+/* =========================================
+   VARIÁVEIS DE CORES (Cores antigas restauradas)
+========================================= */
+:root {
+    --white1: whitesmoke;
+    --green-main: #0d6b24;   /* O verde vivo original que preferes */
+    --green-dark: #064013;   /* O verde escuro para detalhes e bordas */
+    --bg-footer: #111111;    /* Fundo escuro do rodapé */
+    --text-dark: #333333;
+}
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    max-width: 100vw;
+    background-color: var(--white1);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   CABEÇALHO E MENU NAVEGAÇÃO
+========================================= */
+.cabecalho {
+    background-color: var(--green-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative;
+    border-bottom: 12px solid var(--green-dark); /* Borda grossa charmosa da versão anterior */
+    width: 100%;
+}
+
+.logo h2 a {
+    color: var(--white1);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Botão dos três traços */
+.menu-hamburguer {
+    color: var(--white1);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.menu-hamburguer:hover {
+    transform: scale(1.1);
+}
+
+/* Caixa de navegação oculta por padrão lateralmente */
+.menu-navegacao {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Oculto fora do ecrã */
+    width: 280px;
+    height: 100vh;
+    background-color: var(--green-dark);
+    z-index: 9999;
+    padding: 30px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-in-out;
+}
+
+/* Classe ativada via JavaScript */
+.menu-navegacao.ativo {
+    right: 0;
+}
+
+/* Botão de fechar (X) dentro do menu */
+.fechar-menu {
+    color: var(--white1);
+    font-size: 30px;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.fechar-menu i:hover {
+    color: var(--white1);
+    opacity: 0.7;
+}
+
+.menu-navegacao ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-navegacao ul li a {
+    color: var(--white1);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-navegacao ul li a:hover {
+    background-color: var(--green-main);
+    transform: translateX(10px);
+}
+
+/* =========================================
+   ESTRUTURA E CONTEÚDO (Flexbox)
+========================================= */
+main {
+    flex: 1;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 20px;
+}
+
+.flex-coluna {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Banner Principal */
+.banner {
+    background-color: var(--green-main);
+    color: var(--white1);
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner h1 {
+    font-size: 28px;
+}
+
+.resumo-evento h2, .destaques h2 {
+    color: var(--green-main);
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid var(--green-dark);
+    padding-bottom: 5px;
+}
+
+.resumo-evento p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.data-jogos {
+    margin-top: 15px;
+}
+
+.destaques ul {
+    padding-left: 20px;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* =========================================
+   RODAPÉ (Estrutura corrigida com Cores Antigas)
+========================================= */
+.rodape {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 5%;
+    background-color: var(--bg-footer); /* #111111 - Fundo escuro */
+    color: var(--white1);
+    text-align: center;
+    width: 100%;
+    border-top: 8px solid var(--green-main); /* Linha verde decorativa superior */
+}
+
+.rodape .f-item {
+    flex: 1 1 300px;
+    max-width: 360px;
+}
+
+/* COLUNA 1: Logótipo e Texto Alinhados Lado a Lado */
+.rodape .f-instituicao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.rodape .f-logo {
+    max-height: 55px; /* Tamanho controlado e perfeito para o símbolo */
+    width: auto;
+    flex-shrink: 0; /* Impede que o texto esmague o logo */
+}
+
+.rodape .f-instituicao p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* COLUNA 2: Alunos em Lista Vertical */
+.rodape .f-coluna-nomes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.rodape .titulo-desenvolvedores {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.rodape .f-coluna-nomes b {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* COLUNA 3: Ícone do Instagram e Copyright */
+.rodape .f-social-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.rodape .f-icons a {
+    color: var(--white1);
+    font-size: 32px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.rodape .f-icons a:hover {
+    color: var(--green-main);
+    transform: scale(1.2);
+}
+
+.rodape .f-social-copyright p {
+    font-size: 13px;
+    color: #cccccc;
+}

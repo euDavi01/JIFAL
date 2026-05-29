@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIFAL 2026 - Contato</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ========================================================================= */
+        /* AQUI COMEÇA O CSS EXCLUSIVO DO CONTATO (Pode mover para css/contato.css)  */
+        /* ========================================================================= */
+        
+        /* Container principal do formulário usando Flexbox para centralização */
+        .contato-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        /* Estrutura do formulário organizada verticalmente com Flexbox */
+        .contato-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 550px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 6px solid var(--green-main, #0d6b24); /* Mantém o padrão de borda superior */
+        }
+
+        /* Cada grupo (Label + Input) alinhado como coluna com Flexbox */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark, #333);
+            margin-bottom: 8px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Efeito de foco nos campos */
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--green-main, #0d6b24);
+        }
+
+        /* Textarea com tamanho fixo na largura */
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Botão de envio */
+        .btn-enviar {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            background-color: var(--green-main, #0d6b24);
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn-enviar:hover {
+            background-color: var(--green-dark, #064013);
+        }
+
+        /* ========================================================================= */
+        /* FIM DO CSS EXCLUSIVO DO CONTATO                                           */
+        /* ========================================================================= */
+    </style>
+    
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo"><h2><a href="index.html">JIFAL 2026</a></h2></div>
+        <div class="menu-hamburguer" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <nav class="menu-navegacao" id="meuMenu">
+            <div class="fechar-menu" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="modalidades.html">Modalidades Esportivas</a></li>
+                <li><a href="equipes.html">Equipes Participantes</a></li>
+                <li><a href="galeria.html">Galeria de Fotos</a></li>
+                <li><a href="historico.html">Histórico</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-container">
+        <section class="banner" style="padding: 30px 20px;">
+            <h1>Fale Conosco</h1>
+            <p>Dúvidas, sugestões ou problemas com o cronograma? Envie sua mensagem para a comissão organizadora.</p>
+        </section>
+
+        <div class="contato-container">
+            <form class="contato-form" action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="turma">Sua Turma / Vínculo</label>
+                    <select id="turma" name="turma" required>
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="411">Turma 411</option>
+                        <option value="412">Turma 412</option>
+                        <option value="413">Turma 413</option>
+                        <option value="422">Turma 422</option>
+                        <option value="423">Turma 423</option>
+                        <option value="521">Turma 521</option>
+                        <option value="911">Turma 911</option>
+                        <option value="912">Turma 912</option>
+                        <option value="913">Turma 913</option>
+                        <option value="921">Turma 921</option>
+                        <option value="922">Turma 922</option>
+                        <option value="923">Turma 923</option>
+                        <option value="servidor">Professor / Servidor</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="f-item f-instituicao">
+            <img src="images/ifal_logo.png" alt="Logo IFAL" class="f-logo">
+            <p>Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</p>
+        </div>
+        <div class="f-item f-coluna-nomes">
+            <p class="titulo-desenvolvedores">Desenvolvido por:</p>
+            <b>João Vitor</b> <b>Davi Pietro</b> <b>Weverton Vinícius</b> <b>Bruno Rian</b>
+        </div>
+        <div class="f-item f-social-copyright">
+            <div class="f-icons">
+                <a href="https://www.instagram.com/923.ifal_?igsh=dTd6NGY3cHhmYnhv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>Copyright &copy; 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById("meuMenu").classList.toggle("ativo"); 
+        }
+    </script>
+</body>
+</html>

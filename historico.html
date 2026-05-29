@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIFAL 2026 - Histórico dos Jogos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ========================================================================= */
+        /* CSS EXCLUSIVO DO HISTÓRICO - QUADRO DE MEDALHAS COMPLETO                 */
+        /* ========================================================================= */
+        
+        .historico-geral {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Seção que engloba cada Ano (ex: 2026, 2025, 2024...) */
+        .ano-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            border-top: 6px solid var(--green-main, #0d6b24);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .titulo-ano {
+            font-size: 28px;
+            color: var(--green-dark, #064013);
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 800;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        /* Grid Flexbox para alinhar os cards de modalidades lado a lado */
+        .modalidades-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Card de cada esporte */
+        .card-podio {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            width: 280px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            gap: 15px;
+        }
+
+        .titulo-modalidade {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background-color: var(--green-main, #0d6b24);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Divisória de categoria (Masculino / Feminino) dentro do card */
+        .categoria-bloco {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .categoria-bloco h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 5px 0 0 0;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 4px;
+        }
+
+        /* Lista de posições */
+        .lista-medalhas {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .lista-medalhas li {
+            font-size: 15px;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .lista-medalhas i {
+            font-size: 18px;
+            margin-right: 10px;
+            width: 22px;
+            text-align: center;
+        }
+
+        /* Cores exatas do pódio */
+        .ouro { color: #FFD700; }
+        .prata { color: #C0C0C0; }
+        .bronze { color: #CD7F32; }
+
+        /* ========================================================================= */
+        /* FIM DO CSS EXCLUSIVO DO HISTÓRICO                                         */
+        /* ========================================================================= */
+    </style>
+
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo"><h2><a href="index.html">JIFAL 2026</a></h2></div>
+        <div class="menu-hamburguer" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <nav class="menu-navegacao" id="meuMenu">
+            <div class="fechar-menu" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="modalidades.html">Modalidades Esportivas</a></li>
+                <li><a href="equipes.html">Equipes Participantes</a></li>
+                <li><a href="galeria.html">Galeria de Fotos</a></li>
+                <li><a href="historico.html">Histórico</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-container">
+        <section class="banner" style="padding: 30px 20px;">
+            <h1>Histórico dos Jogos</h1>
+            <p>Confira o quadro oficial e detalhado de medalhas das edições anteriores e da atual.</p>
+        </section>
+
+        <div class="historico-geral">
+
+            <section class="ano-section">
+                <h2 class="titulo-ano">JIFAL 2026</h2>
+                <div class="modalidades-container">
+                    
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Futsal</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 912</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 422</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 412</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 411</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 422</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Handebol</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 422</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 911</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 913</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 422</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 411</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 413</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </section>
+
+            <section class="ano-section">
+                <h2 class="titulo-ano">JIFAL 2025</h2>
+                <div class="modalidades-container">
+                    
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Handebol</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 913</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 923</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 421</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Futsal</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 411</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 423</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Basquete</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 923</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 923</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Vôlei</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal prata"></i> ----</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> ----</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal prata"></i> ----</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> ----</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Misto</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 411</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 422</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="ano-section">
+                <h2 class="titulo-ano">JIFAL 2024</h2>
+                <div class="modalidades-container">
+                    
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Handebol</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 923</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 422</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 922</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 923</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Futsal</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 423</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 413</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 922</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 913</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Basquete</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 422</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 411</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 922</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Vôlei</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 912</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 411</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 912</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 412</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 423</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Misto</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 923</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="ano-section">
+                <h2 class="titulo-ano">JIFAL 2023</h2>
+                <div class="modalidades-container">
+                    
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Handebol</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 411</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 411</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 923/423</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Futsal</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 422</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 421</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Basquete</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 422</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> 3º: Turma 921</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 913</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> ----</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-podio">
+                        <div class="titulo-modalidade">Vôlei</div>
+                        <div class="categoria-bloco">
+                            <h4>Masculino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 413</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> ----</li>
+                            </ul>
+                        </div>
+                        <div class="categoria-bloco">
+                            <h4>Feminino</h4>
+                            <ul class="lista-medalhas">
+                                <li><i class="fa-solid fa-medal ouro"></i> 1º: Turma 923/423</li>
+                                <li><i class="fa-solid fa-medal prata"></i> 2º: Turma 411</li>
+                                <li><i class="fa-solid fa-medal bronze"></i> @913</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="f-item f-instituicao">
+            <img src="images/ifal_logo.png" alt="Logo IFAL" class="f-logo">
+            <p>Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</p>
+        </div>
+        <div class="f-item f-coluna-nomes">
+            <p class="titulo-desenvolvedores">Desenvolvido por:</p>
+            <b>João Vitor</b> <b>Davi Pietro</b> <b>Weverton Vinícius</b> <b>Bruno Rian</b>
+        </div>
+        <div class="f-item f-social-copyright">
+            <div class="f-icons">
+                <a href="https://www.instagram.com/923.ifal_?igsh=dTd6NGY3cHhmYnhv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>Copyright &copy; 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById("meuMenu").classList.toggle("ativo"); 
+        }
+    </script>
+</body>
+</html>

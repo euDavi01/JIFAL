@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIFAL 2026 - Programação Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .cronograma-container {
+            width: 100%;
+            max-width: 1100px;
+            overflow-x: auto; /* Permite arrastar para o lado no celular */
+            margin-top: 20px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background-color: white;
+        }
+
+        .tabela-jifal {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px; /* Evita que os textos quebrem em telas pequenas */
+            text-align: left;
+        }
+
+        .tabela-jifal th {
+            background-color: var(--green-main, #0d6b24); 
+            color: whitesmoke;
+            font-weight: 700;
+            padding: 16px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border-bottom: 4px solid var(--green-dark, #064013);
+        }
+
+        .tabela-jifal td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 15px;
+            color: #333333;
+            vertical-align: middle;
+        }
+
+        /* Identificadores de Modalidade */
+        .badge-modalidade {
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .bg-masc { background-color: #3498db; }
+        .bg-fem { background-color: #e74c3c; }
+        .bg-misto { background-color: #8e44ad; }
+        .bg-geral { background-color: #f39c12; }
+
+        /* Cores de fundo da linha inteira (opcional) */
+        .linha-masc { background-color: rgba(52, 152, 219, 0.05); }
+        .linha-fem { background-color: rgba(231, 76, 60, 0.05); }
+
+        /* Alinhamento do confronto */
+        .confronto-times {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .vs-tag {
+            color: #e53e3e;
+            font-weight: 800;
+            margin: 0 8px;
+            font-size: 14px;
+        }
+
+        /* LINHA DE DIVISÃO DE DIA */
+        .linha-dia {
+            background-color: var(--green-dark, #064013) !important;
+            color: white !important;
+            font-weight: 700;
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .linha-dia td {
+            padding: 14px;
+            color: white;
+            text-align: center;
+        }
+
+        /* LINHA DE INTERVALO */
+        .linha-intervalo {
+            background-color: #f8f9fa !important;
+            font-weight: 700;
+            color: #718096;
+            text-align: center;
+            font-style: italic;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .linha-intervalo td {
+            padding: 12px;
+            text-align: center;
+            border-top: 2px dashed #cbd5e0;
+            border-bottom: 2px dashed #cbd5e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo"><h2><a href="index.html">JIFAL 2026</a></h2></div>
+        <div class="menu-hamburguer" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <nav class="menu-navegacao" id="meuMenu">
+            <div class="fechar-menu" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="modalidades.html">Modalidades Esportivas</a></li>
+                <li><a href="equipes.html">Equipes Participantes</a></li>
+                <li><a href="galeria.html">Galeria de Fotos</a></li>
+                <li><a href="historico.html">Histórico</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-container">
+        <section class="banner" style="padding: 30px 20px;">
+            <h1>Programação Oficial</h1>
+            <p>Fique por dentro das datas, horários e locais exatos de cada confronto.</p>
+        </section>
+
+        <div class="cronograma-container">
+            <table class="tabela-jifal">
+                <thead>
+                    <tr>
+                        <th>Modalidade</th>
+                        <th>Confronto / Informações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr class="linha-dia">
+                        <td colspan="2">Quarta-feira (13/05/2026) - 09:00</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-geral">Jogo de Abertura</span></td>
+                        <td class="confronto-times">Servidores <span class="vs-tag">X</span> Campeão 2025</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">521 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">921 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">412 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 923</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-intervalo">
+                        <td colspan="2">Intervalo</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">921 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">412 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">923 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">922 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">921 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 923</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+
+                    <tr class="linha-dia">
+                        <td colspan="2">Quinta-feira (14/05/2026) - 08:00</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">1º Lugar A <span class="vs-tag">X</span> 1º Lugar B</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">1º Lugar C <span class="vs-tag">X</span> 2º Melhor</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">1º Lugar A <span class="vs-tag">X</span> 1º Lugar B</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">1º Lugar C <span class="vs-tag">X</span> 2º Melhor</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">Perdedor Jogo 1 <span class="vs-tag">X</span> Perdedor Jogo 2</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Futsal Masc.</span></td>
+                        <td class="confronto-times">Vencedor Jogo 1 <span class="vs-tag">X</span> Vencedor Jogo 2</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">Perdedor Jogo 1 <span class="vs-tag">X</span> Perdedor Jogo 2</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Futsal Fem.</span></td>
+                        <td class="confronto-times">Vencedor Jogo 1 <span class="vs-tag">X</span> Vencedor Jogo 2</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 923</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">521 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">922 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-intervalo">
+                        <td colspan="2">Intervalo</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">521 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">923 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">911 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">1ºA <span class="vs-tag">X</span> 1ºB</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">1ºC <span class="vs-tag">X</span> 1ºA</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Handebol Masc.</span></td>
+                        <td class="confronto-times">1ºB <span class="vs-tag">X</span> 1ºC</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">2º Lugar A <span class="vs-tag">X</span> 2º Lugar B</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Handebol Fem.</span></td>
+                        <td class="confronto-times">1º Lugar A <span class="vs-tag">X</span> 1º Lugar B</td>
+                    </tr>
+
+                    <tr class="linha-dia">
+                        <td colspan="2">Sexta-feira (15/05/2026) - A partir de 07:45</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-geral">Basquete Festivo</span></td>
+                        <td class="confronto-times">Servidores <span class="vs-tag">X</span> Alunos</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">911 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 923</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Basquete Fem.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Basquete Fem.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">Vencedor 1 <span class="vs-tag">X</span> Vencedor 2</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">Vencedor 3 <span class="vs-tag">X</span> Vencedor 4</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">Vencedor 5 <span class="vs-tag">X</span> Vencedor 6</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Basquete Fem.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> Vencedor 1</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">Vencedor 7 <span class="vs-tag">X</span> Vencedor 5</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Basquete Fem.</span></td>
+                        <td class="confronto-times">Vencedor 2 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Basquete Masc.</span></td>
+                        <td class="confronto-times">Vencedor 6 <span class="vs-tag">X</span> Vencedor 7</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Basquete Fem.</span></td>
+                        <td class="confronto-times">Vencedor 1 <span class="vs-tag">X</span> Vencedor 2</td>
+                    </tr>
+                    <tr class="linha-intervalo">
+                        <td colspan="2">Intervalo</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">911 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">412 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 922</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">923 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">413 <span class="vs-tag">X</span> 422</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">911 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">913 <span class="vs-tag">X</span> 411</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">923 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">912 <span class="vs-tag">X</span> 423</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 911</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">1º Lugar A <span class="vs-tag">X</span> 1º Lugar B</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">1º Lugar A <span class="vs-tag">X</span> 1º Lugar B</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">1º Lugar C <span class="vs-tag">X</span> 1º Lugar A</td>
+                    </tr>
+                    
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">José Pereira de Lira Neto (412) <span class="vs-tag">X</span> Caio Shay Souza Barbosa (923)</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Alisson José Balbino Silva (423) <span class="vs-tag">X</span> Nathan dos Santos Queiroz (422)</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">José Inácio da Silva Neto (922) <span class="vs-tag">X</span> Felipe Pereira Neutzling Griep (911)</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Arthur Ramos Magalhães (411) <span class="vs-tag">X</span> João Gabriel Borges Brito (413)</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Isabela Jovino da Silva (412) <span class="vs-tag">X</span> Eloiza Laurindo Alves (912)</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Jamily Lima Damasceno (423) <span class="vs-tag">X</span> Larissa Campos Tenório Lima (422)</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Maria Suellen Cristinny (411) <span class="vs-tag">X</span> Bárbara Margarida de Oliveira (413)</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 1 <span class="vs-tag">X</span> Vencedor 2</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 3 <span class="vs-tag">X</span> Vencedor 4</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 5 <span class="vs-tag">X</span> Vencedor 6</td>
+                    </tr>
+                    <tr class="linha-intervalo">
+                        <td colspan="2">Intervalo</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 8 <span class="vs-tag">X</span> Vencedor 9</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Vencedora 5 <span class="vs-tag">X</span> Vencedora 6</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 10 <span class="vs-tag">X</span> Vencedor 8</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Vencedora 7 <span class="vs-tag">X</span> Vencedora 5</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Tênis de Mesa Masc.</span></td>
+                        <td class="confronto-times">Vencedor 9 <span class="vs-tag">X</span> Vencedor 10</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Tênis de Mesa Fem.</span></td>
+                        <td class="confronto-times">Vencedora 6 <span class="vs-tag">X</span> Vencedora 7</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">José Pereira / Maysa Isabel (412) <span class="vs-tag">X</span> Eloiza Laurindo / Tauã Vítor (912)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">Alisson José / Jamily Lima (423) <span class="vs-tag">X</span> Nathan dos Santos / Larissa Campos (422)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">Maria Suellen / Arthur Ramos (411) <span class="vs-tag">X</span> João Gabriel / Bárbara Margarida (413)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">Vencedor 17 <span class="vs-tag">X</span> Vencedor 18</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">Vencedor 19 <span class="vs-tag">X</span> Vencedor 17</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">T. de Mesa Dupla Mista</span></td>
+                        <td class="confronto-times">Vencedor 18 <span class="vs-tag">X</span> Vencedor 19</td>
+                    </tr>
+
+                    <tr class="linha-dia">
+                        <td colspan="2">Sexta-feira (15/05/2026) - 09:00 - XADREZ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-geral">Xadrez</span></td>
+                        <td style="font-size: 14px;">
+                            <strong>Lista de Atletas:</strong><br>
+                            1. Angélica Isméria Ferreira da Silva | 2. Samuel Fernandes dos Santos | 3. Breno Jabez Da Silva Araújo | 4. Geovanna Marques do Santos | 5. Miguel Vieira da Silva | 6. José Kauã Leite de Oliveira | 7. Emerson Ramiro da Silva | 8. Isabela Jovino da Silva | 9. Maysa Isabely Bispo de Santana | 10. Maysa Antônelly Alves da Silva | 11. Ítalo Alberto Pereira da Silva | 12. Alysson Vinícius Santos de Farias | 13. Samuel de Oliveira Silva Santos | 14. Isabela Ferreira da Silva | 15. Caio Shay Souza Barbosa | 16. Rafael Bispo dos Santos | 17. Davi Pietro Bastos dos Santos | 18. Juliana Barbosa da Silva | 19. Jamily Lima Damasceno | 20. Arthur Gustavo Nascimento Silva | 21. Bárbara Margarida de Oliveira Pinto Soares | 22. Larissa Costa de Araújo | 23. Fernanda da Silva Francolino | 24. Pedro Miguel da Silva Brito | 25. Isabelly | 26. Alvaro Mateus Santos Lira | 27. Bruno César De Almeida Bento Da Silva | 28. Pedro Guilherme da Costa Moura | 29. José Gabriel Medeiros de Moura | 30. Metusalem Costa Silva | 31. João Vitor Bezerra dos Santos | 32. Marcos Antônio Santos Silva | 33. Flávia Alessandra Silva Santana | 34. Matheus Soares Vieira | 35. José Adryellisson Lourenço da Silva | 36. Williara Vitória Mário Costa de Melo | 37. Ryan Carlos Duarte de Oliveira | 38. Ryan Carlos Duarte de Oliveira
+                        </td>
+                    </tr>
+
+                    <tr class="linha-dia">
+                        <td colspan="2">Sábado (16/05/2026) - 08:00</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">1º Lugar C <span class="vs-tag">X</span> 1º Lugar A</td>
+                    </tr>
+                    <tr class="linha-masc">
+                        <td><span class="badge-modalidade bg-masc">Voleibol Masc.</span></td>
+                        <td class="confronto-times">1º Lugar B <span class="vs-tag">X</span> 1º Lugar C</td>
+                    </tr>
+                    <tr class="linha-fem">
+                        <td><span class="badge-modalidade bg-fem">Voleibol Fem.</span></td>
+                        <td class="confronto-times">1º Lugar B <span class="vs-tag">X</span> 1º Lugar C</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">422 <span class="vs-tag">X</span> 413</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">911 <span class="vs-tag">X</span> 412</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">423 <span class="vs-tag">X</span> 913</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">411 <span class="vs-tag">X</span> 521</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">921 <span class="vs-tag">X</span> 912</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">Vencedor 1 <span class="vs-tag">X</span> Vencedor 2</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">Vencedor 3 <span class="vs-tag">X</span> Vencedor 4</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">Vencedor 5 <span class="vs-tag">X</span> Vencedor 6</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">Vencedor 7 <span class="vs-tag">X</span> Vencedor 5</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-modalidade bg-misto">Voleibol Misto</span></td>
+                        <td class="confronto-times">Vencedor 6 <span class="vs-tag">X</span> Vencedor 7</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="f-item f-instituicao">
+            <img src="imagens/ifal_logo.png" alt="Logo IFAL" class="f-logo">
+            <p>Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</p>
+        </div>
+        <div class="f-item f-coluna-nomes">
+            <p class="titulo-desenvolvedores">Desenvolvido por:</p>
+            <b>João Vitor</b> <b>Davi Pietro</b> <b>Weverton Vinícius</b> <b>Bruno Rian</b>
+        </div>
+        <div class="f-item f-social-copyright">
+            <div class="f-icons">
+                <a href="https://www.instagram.com/923.ifal_?igsh=dTd6NGY3cHhmYnhv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>Copyright &copy; 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById("meuMenu").classList.toggle("ativo"); 
+        }
+    </script>
+</body>
+</html>
